@@ -65,11 +65,33 @@ Some skills call other skills. Install these together:
 
 Skills that spawn subagents point to the Subagents section of `poteto-mode` to pick each subagent's effort. Without `poteto-mode`, they use the default effort.
 
+## Operational work
+
+For research, documents, and recurring business workflows, start with these standalone skills. They do not require the engineering stack or a repository.
+
+| Skill | Use it for |
+|---|---|
+| `operations-mode` | Own an investigation or recurring review, apply judgment, track findings, and complete authorized follow-through |
+| `evidence-brief` | Turn documents, discussions, and records into a concise proposal, update, or meeting follow-up |
+| `maintain-workflow-doc` | Maintain SOPs, templates, and linked trackers while preserving human edits |
+
+Select these from the installer above. Install from the checkout containing these additions until they are released. Each works alone; `operations-mode` uses the other two when available.
+
+Example requests:
+
+- “Use operations-mode to review supplier onboarding exceptions. Check the evidence, investigate meaningful changes, and prepare a short decision brief. Keep unresolved cases for the next run.”
+- “Use evidence-brief to turn these meeting notes and the existing tracker into follow-ups. Separate decisions from ideas and leave proposed work unassigned.”
+- “Use maintain-workflow-doc to update our handoff SOP and its template. Preserve my edits and verify the saved workflow.”
+
+Start with one supervised run using representative cases, including an ambiguous one. Agree on the judgment criteria and allowed actions, then reuse the [workflow brief](skills/operations-mode/references/workflow-brief.md). A scheduler belongs to the host application and needs separate authorization. These skills do not create one, connect accounts, or grant access.
+
+The agent can vary its investigation while keeping evidence quality, permissions, and continuity explicit. No evidence, conflicting evidence, and verified absence are different results. Human corrections improve the workflow without silently becoming universal policy.
+
 ## What this mirror changes
 
 Many skills were Cursor-specific. They've been rewritten to work in any harness.
 
-The mirror also carries two community fixes that aren't upstream yet:
+The mirror adds the operational skills above and carries two community fixes that aren't upstream yet:
 
 - `no-comments` keeps a comment about an outside rule (a dependency, platform, or protocol) when it can't check the rule, and marks it for review instead of deleting it. A rejected review no longer stops the whole run. ([#14](https://github.com/backnotprop/pstack/issues/14))
 - `statechart` runs on Windows: it no longer needs `/bin/sh`, reads TLC output with Windows line endings, and cleans up its temp folder after a killed run. Patch by [@yasuyuki](https://github.com/yasuyuki). ([#17](https://github.com/backnotprop/pstack/issues/17))

@@ -10,6 +10,10 @@ color: yellow
 
 Bundled skills live at `../<name>/SKILL.md` from this file, so put this file's absolute path in every `poteto-agent` prompt.
 
+## Non-code operational work
+
+For operational investigations, recurring reviews, proposals, and SOP/template maintenance, read `../operations-mode/SKILL.md` when installed and use that workflow instead of the engineering triggers and playbooks below. Its evidence, action-permission, and continuity rules govern that run. A code implementation task still uses the engineering workflow. If the operations skill is unavailable, state that and handle the non-code request directly within its scope; do not force it through code/PR gates.
+
 ## Non-negotiables
 
 The Principles section below grounds every trigger. In your reply, name each principle that shaped a decision and the specific choice it changed. Cite only principles whose leaf SKILL.md you read this session.

@@ -8,7 +8,7 @@ disable-model-invocation: true
 
 Answer the user's question about pstack, hand them a prompt they can send, and link the file the answer came from. For a help question, don't start the work. The user asked how, and a pstack run spends real tokens, so let them send the prompt.
 
-A message that asks for work, such as "use pstack to fix this bug", is not a help question. Read [`poteto-mode`](../poteto-mode/SKILL.md), do the work under it, and mention once that a Custom Mode keeps it on.
+A message that asks for work, such as "use pstack to fix this bug", is not a help question. For non-code operational work, read [`operations-mode`](../operations-mode/SKILL.md) when installed. For engineering work, read [`poteto-mode`](../poteto-mode/SKILL.md), do the work under it, and mention once that a Custom Mode keeps it on.
 
 This file maps questions to the skills and guide pages that hold the answers. Those files own the details. Read the file you route to before you quote it, and trust it when it disagrees with this map. The links here point into the installed plugin, which the user may not be able to open, so give the user the file's public copy: `https://github.com/cursor/plugins/blob/main/pstack/` followed by its path.
 
@@ -32,6 +32,12 @@ When the model rule is missing and it matters, ask whether the user wants to pic
 
 - Now: give them `/setup-pstack` to type, and answer their question too.
 - Later: answer their question, and add one line saying every role keeps its default model until they run `/setup-pstack`.
+
+## Operational work
+
+For non-code research, recurring reviews, and document workflows, start with [`operations-mode`](../operations-mode/SKILL.md). It works alone and needs no model-role setup or engineering verification harness. [`evidence-brief`](../evidence-brief/SKILL.md) handles concise source-backed documents; [`maintain-workflow-doc`](../maintain-workflow-doc/SKILL.md) handles SOPs and templates. These mirror additions live at `https://github.com/backnotprop/pstack/tree/main/skills/`, not the upstream public-copy path above. Only link a published copy after confirming it exists; otherwise reference the installed file.
+
+These three skills allow automatic selection by description in hosts that support it. The explicit-only discovery notes below describe the upstream engineering skills. A recurring workflow needs an authorized host scheduler; installing a skill does not schedule it.
 
 ## Get set up
 
@@ -65,7 +71,10 @@ The default answer is `/poteto-mode`, which runs most of the others when its ste
 
 | The user wants to | Skill |
 |---|---|
-| Do any non-trivial task with rigor | [`/poteto-mode`](../poteto-mode/SKILL.md) |
+| Own a non-code investigation or recurring review | [`operations-mode`](../operations-mode/SKILL.md) |
+| Draft a source-backed proposal, update, or follow-up | [`evidence-brief`](../evidence-brief/SKILL.md) |
+| Maintain an SOP, template, or linked workflow | [`maintain-workflow-doc`](../maintain-workflow-doc/SKILL.md) |
+| Do a non-trivial engineering task with rigor | [`/poteto-mode`](../poteto-mode/SKILL.md) |
 | Check that the agent understood their goal and the problem before it starts | [`/in-your-own-words`](../in-your-own-words/SKILL.md) |
 | Get a prompt rewritten deeper, not bigger, before sending it: what a top professional would add, their raw material and methods, and an outside check. It returns the prompt and doesn't do the task | [`/sharpen`](../sharpen/SKILL.md) |
 | Know how code works now, or where new code should live | [`/how`](../how/SKILL.md) |
