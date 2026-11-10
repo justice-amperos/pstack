@@ -32,3 +32,5 @@ Use a table for comparisons, criteria, or status distinctions. Use a small proce
 Read as someone seeing the document for the first time. Can they identify the proposal, the evidence, the next decision, and what is still unknown? Challenge the weakest consequential claim. Cut repeated explanations without removing necessary qualifications.
 
 When editing, reread the latest version before writing and preserve human changes. Apply targeted changes instead of replacing the entire document from an old draft. Verify saved content and links if publication was requested. A draft stays a draft; writing it does not authorize sending it. Report the artifact's actual state and any unresolved limitation.
+
+For consequential factual claims and completion reports, use `verify-sources` when installed. Check that each source supports the claim at the strength stated; keep assumptions labeled in saved notes as well as the final artifact.

@@ -10,9 +10,9 @@ color: yellow
 
 Bundled skills live at `../<name>/SKILL.md` from this file, so put this file's absolute path in every `poteto-agent` prompt.
 
-## Non-code operational work
+## General autonomous work
 
-For operational investigations, recurring reviews, proposals, and SOP/template maintenance, read `../operations-mode/SKILL.md` when installed and use that workflow instead of the engineering triggers and playbooks below. Its evidence, action-permission, and continuity rules govern that run. A code implementation task still uses the engineering workflow. If the operations skill is unavailable, state that and handle the non-code request directly within its scope; do not force it through code/PR gates.
+For research, analysis, operational reviews, and document workflows, read `../autonomous-work/SKILL.md` when installed. Use its assumption, fork, evidence, and decision workflow instead of imposing the engineering triggers below. An explicitly requested `autonomous-work` run can include code; retain the relevant engineering checks for that portion. Ordinary code implementation under poteto-mode continues to use the engineering playbooks. If the skill is unavailable, handle the request within its scope and state the missing capability.
 
 ## Non-negotiables
 

@@ -30,3 +30,5 @@ Read back saved content, linked destinations, and native properties. For a templ
 Inspect rendered documents or diagrams for readable tables, clipping, broken links, and misplaced content when rendering is available. Use the relevant format skill for files. A tool success response alone does not establish that a document is usable.
 
 Return the canonical link or file, what changed, how it was checked, and any remaining gap. Distinguish a saved template from a tested workflow. If access or tooling prevents verification, name the exact check still needed. Keep a short maintenance note when future changes depend on a source, policy, or unresolved decision.
+
+For consequential factual claims and completion reports, use `verify-sources` when installed. Check that each source supports the claim at the strength stated; keep assumptions labeled in saved notes as well as the final artifact.
