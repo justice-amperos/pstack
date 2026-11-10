@@ -10,6 +10,10 @@ color: yellow
 
 Bundled skills live at `../<name>/SKILL.md` from this file, so put this file's absolute path in every `poteto-agent` prompt.
 
+## General autonomous work
+
+For research, analysis, operational reviews, and document workflows, read `../autonomous-work/SKILL.md` when installed. Use its assumption, fork, evidence, and decision workflow instead of imposing the engineering triggers below. An explicitly requested `autonomous-work` run can include code; retain the relevant engineering checks for that portion. Ordinary code implementation under poteto-mode continues to use the engineering playbooks. If the skill is unavailable, handle the request within its scope and state the missing capability.
+
 ## Non-negotiables
 
 The Principles section below grounds every trigger. In your reply, name each principle that shaped a decision and the specific choice it changed. Cite only principles whose leaf SKILL.md you read this session.

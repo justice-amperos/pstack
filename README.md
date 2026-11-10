@@ -65,11 +65,32 @@ Some skills call other skills. Install these together:
 
 Skills that spawn subagents point to the Subagents section of `poteto-mode` to pick each subagent's effort. Without `poteto-mode`, they use the default effort.
 
+## Autonomous work
+
+Use `autonomous-work` to carry a task from a brief through investigation, execution, and verification, with fewer interruptions. It chooses reversible defaults, compares plausible approaches, continues independent work while decisions are pending, and keeps a compact record for resuming. It works across research, analysis, operations, documents, and code; domain-specific checks still apply.
+
+| Skill | Role |
+|---|---|
+| `autonomous-work` | Own the outcome, investigate forks, verify progress, and ask only for consequential human decisions |
+| `verify-sources` | Check that evidence supports factual claims and completion reports at the strength stated, including ordinary chat replies |
+| `evidence-brief` | Turn the work into a concise proposal, update, or decision brief |
+| `maintain-workflow-doc` | Maintain SOPs, templates, and linked trackers while preserving human edits |
+
+Select these from a checkout containing the additions until released. Each works alone; the mode uses the supporting skills when available. It does not require installing the full engineering stack.
+
+Example request:
+
+> Use autonomous-work to take this review end to end. Make reasonable reversible assumptions, compare approaches on representative cases, and verify the sources and final result. Bring me short decisions with your recommendation only when you need my judgment. Keep working on independent parts while waiting. Read and draft only.
+
+Specify broader allowed actions when wanted. A short request is enough; the agent infers the task record from context instead of demanding a filled-in form. [The task record](skills/autonomous-work/references/workflow-brief.md) captures consequential assumptions, evidence, unresolved choices, and the next action. [Recurring-run guidance](skills/autonomous-work/references/recurring-runs.md) preserves coverage and avoids duplicate actions.
+
+Start with representative cases to calibrate judgment. The host supplies tools, account access, runtime, and any separately authorized scheduler. A skill cannot keep running after its host stops. [Synthetic validation scenarios](docs/operations-validation.md) describe what has been checked and what still needs live validation.
+
 ## What this mirror changes
 
 Many skills were Cursor-specific. They've been rewritten to work in any harness.
 
-The mirror also carries two community fixes that aren't upstream yet:
+The mirror adds the autonomy skills above and carries two community fixes that aren't upstream yet:
 
 - `no-comments` keeps a comment about an outside rule (a dependency, platform, or protocol) when it can't check the rule, and marks it for review instead of deleting it. A rejected review no longer stops the whole run. ([#14](https://github.com/backnotprop/pstack/issues/14))
 - `statechart` runs on Windows: it no longer needs `/bin/sh`, reads TLC output with Windows line endings, and cleans up its temp folder after a killed run. Patch by [@yasuyuki](https://github.com/yasuyuki). ([#17](https://github.com/backnotprop/pstack/issues/17))
